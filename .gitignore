@@ -1,3 +1,6 @@
+sounds/*
+!sounds/notification.wav
+
 .env
 dist/
 build/

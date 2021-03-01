@@ -2,6 +2,13 @@
 
 This is quick sample code, not meant for use as-is.
 
+If you want to use a `venv` to isolate your Python environment:
+
+```text
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
 Install the dependencies:
 
 ```text

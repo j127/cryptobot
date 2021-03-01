@@ -87,5 +87,4 @@ if __name__ == "__main__":
             send_notifiction(price)
 
         # This is where it delays
-        delay = DELAY
-        sleep(delay)
+        sleep(DELAY)

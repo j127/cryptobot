@@ -1,9 +1,11 @@
-import requests
+from os import path
 from datetime import datetime
 from textwrap import dedent
 from time import sleep
 
 from plyer import notification
+import requests
+import simpleaudio as sa
 
 ##########################
 # PUT YOUR SETTINGS HERE #
@@ -11,6 +13,10 @@ from plyer import notification
 DELAY = 300  # seconds
 LOW_PRICE_NOTIFICATION = 1300
 HIGH_PRICE_NOTIFICATION = 1800
+SHOULD_PLAY_AUDIO = True
+
+# This file has to exist in the `sounds` directory.
+AUDIO_FILENAME = "notification.wav"
 
 
 # The URL for the API
@@ -60,6 +66,9 @@ def send_notifiction(price):
     =====================
     """))
 
+    if SHOULD_PLAY_AUDIO:
+        play_sound()
+
     notification.notify(
         title=title,
         message=message,
@@ -77,6 +86,15 @@ def should_notify(price):
     else:
         log(f"price of {price} is not worth a notification")
         return False
+
+
+def play_sound():
+    """
+    Play an audio notification.
+    """
+    filename = path.join("sounds", AUDIO_FILENAME)
+    wave_obj = sa.WaveObject.from_wave_file(filename)
+    wave_obj.play()
 
 
 if __name__ == "__main__":

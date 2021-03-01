@@ -22,7 +22,7 @@ def log(message):
     Prints a log message to the terminal.
     """
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"{now}\t {message}")
+    print(f"{now}\t{message}")
 
 
 def fetch_price():

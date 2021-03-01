@@ -5,6 +5,13 @@ from time import sleep
 
 from plyer import notification
 
+##########################
+# PUT YOUR SETTINGS HERE #
+##########################
+DELAY = 300  # seconds
+LOW_PRICE_NOTIFICATION = 1300
+HIGH_PRICE_NOTIFICATION = 1800
+
 
 # The URL for the API
 URL = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD"
@@ -64,7 +71,7 @@ def should_notify(price):
     """
     This function checks to see if the price should send a notification.
     """
-    if price <= 1500 or price >= 1800:
+    if price <= LOW_PRICE_NOTIFICATION or price >= HIGH_PRICE_NOTIFICATION:
         log(f"sending notification for {price}!")
         return True
     else:
@@ -80,5 +87,5 @@ if __name__ == "__main__":
             send_notifiction(price)
 
         # This is where it delays
-        delay = 300  # seconds
+        delay = DELAY
         sleep(delay)

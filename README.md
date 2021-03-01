@@ -15,3 +15,5 @@ Run the program:
 ```text
 python app.py
 ```
+
+The sound file is in the public domain from [here](https://freesound.org/people/Zott820/sounds/209578/).

@@ -1,5 +1,7 @@
 # README
 
+This is quick sample code, not meant for use as-is.
+
 Install the dependencies:
 
 ```text
